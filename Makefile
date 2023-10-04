@@ -1,5 +1,5 @@
-APP_NAME = LZW
-LIB_NAME = LZWlib
+APP_NAME = lzwcompress
+LIB_NAME = liblzwcompress
 CC = gcc
 
 CFLAGS = -Wall
@@ -23,7 +23,7 @@ LIB_OBJECTS = $(LIB_SOURCES:$(SRC_DIR)/%.$(SRC_EXT)=$(OBJ_DIR)/$(SRC_DIR)/%.o)
 
 DEPS = $(APP_OBJECTS:.o=.d) $(LIB_OBJECTS:.o=.d)
 
-.PHONY: LZW
+.PHONY: lzwcompress
 LZW: $(APP_PATH)
 
 -include $(DEPS)

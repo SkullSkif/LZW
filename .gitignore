@@ -1,7 +1,9 @@
 *~
 *main
 *output
-*bin/
+bin/*
+!bin/lzwcompress
+!bin/WarAndPeace.txt
 *.d
 *.o
 *.a
