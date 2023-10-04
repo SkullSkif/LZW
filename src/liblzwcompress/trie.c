@@ -1,17 +1,5 @@
 #include <stdlib.h>
-#include <stdbool.h>
-#include <stdint.h>
-
-#define N 256 // Размер ASCII
-
-typedef struct TrieNode TrieNode;
-
-struct TrieNode
-{
-    uint32_t value;
-    TrieNode *children[N];
-    bool is_leaf;
-};
+#include "liblzwcompress/trie.h"
 
 TrieNode *make_trie_node()
 {

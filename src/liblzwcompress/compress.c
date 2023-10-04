@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-//#include <stdint.h>
-#include "trie.c"
-#include "constants.h"
+#include "liblzwcompress/trie.h"
+#include "liblzwcompress/constants.h"
 
 static inline void write_code_to_file(FILE *file, uint32_t code, size_t bytes_per_code)
 {
