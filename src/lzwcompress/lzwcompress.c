@@ -44,7 +44,7 @@ int main(int argc,char* argv[])
             case 'd': option++; break;
             case 'o': 
                 if (argc!=5){
-                    printf("Недостаточно аргументов\n");
+                    printf("Неправильное количество аргументов\n");
                     return 1;
                 }
                 input_file = fopen(argv[argcount], "r");
@@ -63,7 +63,14 @@ int main(int argc,char* argv[])
                 break;
         }
     }
-
+    if (option==0)
+    {
+        printf("Недостаточно аргументов.\n"); 
+        return 1; 
+    } else if (option==3){
+        printf("Слишком много аргументов\n"); 
+        return 1;         
+    }
     input_file = fopen(argv[argcount], "r");
 
     if (!input_file)
@@ -83,20 +90,19 @@ int main(int argc,char* argv[])
        output_file = fopen("uncompressed.txt","wb"); 
     }
 
-
-
-
     if (!output_file)
     {
         printf("Неудалось открыть выходной файл\n");
         return 1;
     }        
-
+    
     switch(option){
-        case 0: printf("Недостаточно аргументов.\n"); return 1; break;
-        case 1: decompress(input_file,output_file); break;
-        case 2: compress(input_file,output_file); break;
-        case 3: printf("Слишком много аргументов\n"); return 1; break;
+        case 1: 
+            decompress(input_file,output_file); 
+            break;
+        case 2: 
+            compress(input_file,output_file); 
+            break;
     }
 
     return 0;
